@@ -1,118 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PhagoRix – Help</title>
 
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #F1F6F9;
-            margin: 0;
-            padding: 2rem;
-            color: #212A3E;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 700px;
-            width: 100%;
-        }
-
-        header {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            color: #394867;
-            margin-bottom: 2rem;
-        }
-
-        .content {
-            background-color: #F1F6F9;
-            border: 1px solid #9BA4B5;
-            border-radius: 6px;
-            padding: 0.5rem;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .content p {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .content code {
-            background-color: #212A3E;
-            color: #F1F6F9;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #394867;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .back-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-            height: 1px;
-            background-color: #394867;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #212A3E;
-        }
-
-        .back-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f1f6f9;
+        margin: 0;
+        padding: 2rem;
+        color: #212a3e;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .container {
+        max-width: 700px;
+        width: 100%;
+      }
+      
+      header {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      
+      .subtitle {
+        color: #394867;
+        margin-bottom: 2rem;
+      }
+      
+      .content {
+        background-color: #f1f6f9;
+        border: 1px solid #9ba4b5;
+        border-radius: 6px;
+        padding: 0.5rem;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+      
+      .content p {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .content code {
+        background-color: #212a3e;
+        color: #f1f6f9;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      
+      .back-link {
+        display: inline-block;
+        margin-top: 2rem;
+        color: #394867;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      
+      .back-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        background-color: #394867;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      
+      .back-link:hover {
+        color: #212a3e;
+      }
+      
+      .back-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+      
+      .example {
+        margin-bottom: 1rem;
+        word-break: break-all;
+      }
+      
+      .example button {
+        margin-left: 10px;
+        padding: 4px 8px;
+        border: 1px solid #394867;
+        background-color: #394867;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .example button:hover {
+        background-color: #212a3e;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>Help</header>
-        <div class="subtitle">
-            How to use the PhagoRix host prediction tool
-        </div>
+      <header>Help</header>
+      <div class="subtitle">How to use the PhagoRix host prediction tool</div>
 
-        <div class="content">
-            <p>
-                1. First of all prepare your sequence.
-            <br>
-                2. Second of all put your sequence in the input form of this site.
-            <br>
-                3. Check gained results in laboratory.
-            </p>
+      <div class="content">
+        <p>
+          1. First of all prepare your sequence.
+          <br />
+          2. Second of all put your sequence in the input form of this site.
+          <br />
+          3. Check gained results in laboratory.
+        </p>
 
-            <p>
-                Examples:
-            <br>
-                1. mavvgipgwigtsavaetgqrwmtaasrelrlgnpswmsqfagrsreiihtlgadhnfngqwfrdrcfeaggapivfnitgdlvsyskdvplffmygdtpneyvtlnihggvhmwgrggnggtrvwvagtnggdviqndiggrlriwnygviasgggggagcasnnswvaagtagggggrpfglggtngavmpggdasytspggggsfagqwggggggdaggggggaygrnvtygspgaagravfgssptwgatgtiygswi
-            <br>
-                2. mskkiyggldvthnvtvngkrtiqgindqvfdangnmeldtysrdevldivsmmpishygsqnylpagvsgdfngasenqsqrrnkillendgtlvllrsgtngsveglyysylanalsvddmsrtintsrqykpgffgsnrvaiglyntdpnillgryvdtsnstnglfisitngtlddklhtgffvnqadicpeggiefammaedgsiyvfsvlnennqlqlvvvrvvynisngtytatritgwttktfynttysaqnnmvitnqvtstniadkpyvyvpqnlrgigiymtsidlyvaqqpgtqnfrfrmngdawftmatynarpqhsysfafnmstkqctldagndigsyqaplvitntgsalvptgnvlnndplynhanarniyssyfylssgeafctvcpnlaepllmqkakfpiqivysminvravqstdfkggvvrpsfgsavgsfingvellpdnstkqysrasgsggfrpsyavhkstpnftfkslslgtiqgyepttergyvddnannrifissisgstvttnggifmvgqrysqsfsydknlngtgvisvtqsvldnfrnteyakvlsdwnlssqayrdmtlfvpqqtdipafvmlstitndyknyiriaevnvntrvgnitsitfkrlvlentygenftpngngsiasssvgltiydggsfyfiggsdplthptigntathqfrayvtkstaqftsfvitgshasyeqgrqptalpgigfgifdpldytnkmsfqkygttiadynnwtpqgspinvvsqdvaqgfivyfteetpvilsgksftlpvsnidlrtiksnpanttfyvyvkleqglanyyittdvisetgttaynifwigtiqtnaiqietiniqkrsrldifgaslesagssfpvsyglpsqtgtinw
-            </p>
-        </div>
+        <p>Examples:</p>
+        <ol>
+          <li>
+            <div class="example" data-full="mavvgipgwigtsavaetgqrwmtaasrelrlgnpswmsqfagrsreiihtlgadhnfngqwfrdrcfeaggapivfnitgdlvsyskdvplffmygdtpneyvtlnihggvhmwgrggnggtrvwvagtnggdviqndiggrlriwnygviasgggggagcasnnswvaagtagggggrpfglggtngavmpggdasytspggggsfagqwggggggdaggggggaygrnvtygspgaagravfgssptwgatgtiygswi">
+              <span class="preview"></span>
+              <button onclick="copySequence(this)">Copy</button>
+            </div>
+          </li>
+          <li>
+            <div class="example" data-full="mskkiyggldvthnvtvngkrtiqgindqvfdangnmeldtysrdevldivsmmpishygsqnylpagvsgdfngasenqsqrrnkillendgtlvllrsgtngsveglyysylanalsvddmsrtintsrqykpgffgsnrvaiglyntdpnillgryvdtsnstnglfisitngtlddklhtgffvnqadicpeggiefammaedgsiyvfsvlnennqlqlvvvrvvynisngtytatritgwttktfynttysaqnnmvitnqvtstniadkpyvyvpqnlrgigiymtsidlyvaqqpgtqnfrfrmngdawftmatynarpqhsysfafnmstkqctldagndigsyqaplvitntgsalvptgnvlnndplynhanarniyssyfylssgeafctvcpnlaepllmqkakfpiqivysminvravqstdfkggvvrpsfgsavgsfingvellpdnstkqysrasgsggfrpsyavhkstpnftfkslslgtiqgyepttergyvddnannrifissisgstvttnggifmvgqrysqsfsydknlngtgvisvtqsvldnfrnteyakvlsdwnlssqayrdmtlfvpqqtdipafvmlstitndyknyiriaevnvntrvgnitsitfkrlvlentygenftpngngsiasssvgltiydggsfyfiggsdplthptigntathqfrayvtkstaqftsfvitgshasyeqgrqptalpgigfgifdpldytnkmsfqkygttiadynnwtpqgspinvvsqdvaqgfivyfteetpvilsgksftlpvsnidlrtiksnpanttfyvyvkleqglanyyittdvisetgttaynifwigtiqtnaiqietiniqkrsrldifgaslesagssfpvsyglpsqtgtinw">
+              <span class="preview"></span>
+              <button onclick="copySequence(this)">Copy</button>
+            </div>
+          </li>
+        </ol>
+      </div>
 
-        <a href="/" class="back-link">← Back to main page</a>
+      <a href="/" class="back-link">← Back to main page</a>
     </div>
-</body>
+
+    <script>
+      document.querySelectorAll('.example').forEach((example) => {
+        const fullText = example.getAttribute('data-full')
+        const preview = fullText.substring(0, 50) + '...'
+        example.querySelector('.preview').innerText = preview
+      })
+      
+      function copySequence(button) {
+        const fullText = button.parentElement.getAttribute('data-full')
+      
+        navigator.clipboard
+          .writeText(fullText)
+          .then(() => {
+            button.innerText = 'Copied!'
+            setTimeout(() => (button.innerText = 'Copy'), 1500)
+          })
+          .catch((err) => console.error('Copy failed', err))
+      }
+    </script>
+  </body>
 </html>
