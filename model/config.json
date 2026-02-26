@@ -1,0 +1,1 @@
+{"max_len": 725, "vocab_size": 21, "embed_dim": 64, "hidden_dim": 128, "num_classes": 9, "amino_acids": "ACDEFGHIKLMNPQRSTVWY"}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhagoRix</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F1F6F9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #212A3E;
+        }
+
+        header {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: #394867;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 300px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input {
+            border: 1px solid #9BA4B5;
+            outline: none;
+            background-color: #F1F6F9;
+            color: #212A3E;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #394867;
+        }
+
+        label {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            color: #9BA4B5;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 0.2s ease-out;
+            background-color: #F1F6F9;
+            padding: 0 4px;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 5px;
+            font-size: 0.8rem;
+            color: #394867;
+        }
+
+        button {
+            border: 1px solid #9BA4B5;
+            background-color: #212A3E;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #394867;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .error {
+            color: #394867;
+            font-size: 0.9rem;
+            display: none;
+            margin-top: 0.3rem;
+        }
+
+        .help-link {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #394867;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .help-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 1px;
+            background-color: #394867;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .help-link:hover {
+            color: #212A3E;
+        }
+
+        .help-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .help-link:active {
+            color: #9BA4B5;
+        }
+
+        .error_1 {
+            color: #394867;
+            font-size: 0.9rem;
+            display: none;
+            margin-top: 0.3rem;  
+        }
+    </style>
+</head>
+
+<body>
+    <header>PhagoRix</header>
+
+    <p>
+        Here you can try to use our phage's host prediction tool.
+    </p>
+
+    <form id="sequenceForm" action="{{ url_for('process_form') }}" method="POST">
+        <div class="form-group">
+            <input type="text" id="sequence" name="sequence" placeholder=" " />
+            <label for="sequence">Sequence</label>
+            <div class="error" id="errorMessage">
+                Only amino acid letters are allowed (A, R, N, D, C, Q, E, G, H, I, L, K, M, F, P, S, T, W, Y, V) and lowercase equivalents.
+            </div>
+            <div class="error_1" id="errorMessage_1">
+                It can be empty. Fill the provided field.
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="/help" class="help-link">Help me</a>
+
+    <script>
+        const input = document.getElementById('sequence');
+        const form = document.getElementById('sequenceForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorMessage_1 = document.getElementById('errorMessage_1');
+
+        const aminoAcidRegex = /^[ARNDCQEGHILKMFPSTWYV]*$/i;
+
+        input.addEventListener('input', () => {
+            if (!aminoAcidRegex.test(input.value)) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+form.addEventListener('submit', (e) => {
+    const value = input.value.trim();
+
+    if (value === "") {
+        e.preventDefault();
+        errorMessage_1.style.display = 'block';
+        errorMessage.style.display = 'none';
+        input.focus();
+        return;
+    }
+
+    errorMessage_1.style.display = 'none';
+
+    if (!aminoAcidRegex.test(value)) {
+        e.preventDefault();
+        errorMessage.style.display = 'block';
+        input.focus();
+    } else {
+        errorMessage.style.display = 'none';
+    }
+});
+
+    </script>
+</body>
+</html>
